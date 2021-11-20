@@ -148,6 +148,16 @@ class RSA:
 
         return encryptedMsg
 
+    def encryptNumber(self):
+        self.n, self.e, self.d = self.generate_keys()
+
+        text = int(self.text)
+        res = text ** self.d
+        res = res % self.n
+        res = hex(res)
+
+        return res
+
     def decrypt(self):
         pDecrypt, qDecrypt = self.findPrimeFactors(self.n)
         toitentDecrypt = (pDecrypt-1)*(qDecrypt-1)
