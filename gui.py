@@ -18,11 +18,20 @@ class App(tk.Tk):
     def __init__(self):
         super().__init__()
 
-        self.title("Tugas 1 Kripto (13518003 | 13518116)")
+        self.title("Tugas 5 Kripto (13518003 | 13518116)")
         self.resizable(False, False)
 
         options = {'padx': 5, 'pady': 0}
-        self.titleLabel = ttk.Label(self, text="DIGITAL SIGNATURE SOFTWARE")
+
+        #################
+        ## TITLE FRAME ##
+        #################
+        titleFrame = tk.Frame(self, padx=25, pady=15)
+        titleFrame['borderwidth'] = 3
+        titleFrame['relief'] = 'groove'
+        titleFrame.grid(row=0, column=0, padx=5, pady=(10, 0))
+
+        self.titleLabel = ttk.Label(titleFrame, text="DIGITAL SIGNATURE SOFTWARE")
         self.titleLabel.grid(column=0, row=0, **options)
 
         ################
